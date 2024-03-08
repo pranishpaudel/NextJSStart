@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useAtom } from "jotai";
+import { useEffect } from "react";
 import {
   countAtom,
   userProfileAtom,
@@ -14,8 +15,12 @@ function addNewUser() {
   const [count, setCount] = useAtom(countAtom);
   const [userProfile, setUserProfile] = useAtom(userProfileAtom);
   const addNewUserHandler = async () => {
-    console.log(name, age, email, count, userProfile);
+    setCount(count + 5);
+    console.log(name, age, email, userProfile);
   };
+  useEffect(() => {
+    console.log(`Current count is: ${count}`);
+  }, [count]);
   return (
     <div>
       <input
