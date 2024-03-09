@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useAtom } from "jotai";
 import { useEffect } from "react";
-import {
-  countAtom,
-  userProfileAtom,
-} from "/Users/air/Desktop/NextJS/firstnext/component/jotaiAtoms.js";
 
 function addNewUser() {
   const [name, setName] = useState(null);
